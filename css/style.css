@@ -1,0 +1,159 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+* { tap-highlight-color: rgba(0, 0, 0, 0); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -ms-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; }
+body { font-family: Helvetica, sans-serif; }
+input, textarea { outline: 0; resize: none; }
+html,body { font-size: 20px; height: 100%; overflow: hidden; }
+
+.wrap { position: relative; width: 640px; height: 100%; margin: 0 auto; }
+.loading { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #fff; z-index: 1; }
+.loading_data { position: absolute; top: 50%; left: 50%; width: 200px; height: 200px; margin: -100px 0 0 -100px; padding-top: 80px; text-align: center; font-size: 24px; color: #0c6294; background: url(../images/loading.gif) no-repeat top center; }
+
+section.home { position: absolute; top: 0; width: 640px; height: 100%; }
+section.home .bg { position: absolute; top: 0; width: 640px; height: 498px; background: #f1eff0; }
+section.home .bg .man { position: absolute; top: 0; left: 0; width: 48px; height: 48px; background: url(../images/1.jpg) top -2px left -4px no-repeat; }
+section.home .bg .boss { position: absolute; left: 340px; width: 320px; height: 498px; }
+section.home .bg .bgs { position: absolute; width: 640px; height: 100%; }
+section.home .bg .bg1 { position: absolute; width: 640px; height: 100%; }
+section.home .bg .bg1 .bgs div { display: none; position: absolute; width: 640px; height: 126px; background: black; }
+section.home .bg .bg1 .bgs.on div { display: block; }
+section.home .bg .bg1 .bgs .bgs_1 { left:0; top: 0; }
+section.home .bg .bg1 .bgs .bgs_2 { left: 0; top: 124px; }
+section.home .bg .bg1 .bgs .bgs_3 { left:0; top: 248px; }
+section.home .bg .bg1 .bgs .bgs_4 { left: 0; top: 372px; }
+
+section.home .bg .bg1 .bgs.on .bgs_1,
+section.home .bg .bg1 .bgs.on .bgs_3 { 
+	animation: fly1 1s;
+	-webkit-animation: fly1 1s;
+}
+@keyframes fly1
+{
+	0%   {left:-640px;}
+	50%  {left:-320px;}
+	100% {left:0px;}
+}
+@-webkit-keyframes fly1
+{
+	0%   {left:-640px;}
+	50%  {left:-320px;}
+	100% {left:0px;}
+}
+
+section.home .bg .bg1 .bgs.on .bgs_2,
+section.home .bg .bg1 .bgs.on .bgs_4 { 
+	animation: fly2 1s;
+	-webkit-animation: fly2 1s;
+}
+@keyframes fly2
+{
+	0%   {left:640px;}
+	50%  {left:320px;}
+	100% {left:0px;}
+}
+@-webkit-keyframes fly2
+{
+	0%   {left:640px;}
+	50%  {left:320px;}
+	100% {left:0px;}
+}
+
+section.home .bg .bg2 { display: none; position: absolute; width: 640px; height: 100%; }
+section.home .bg .bg2 .bg2_up .game { position: absolute; top: 0; width: 640px; height: 330px; border-bottom: 1px solid #000; }
+section.home .bg .bg2 .bg2_up .game .boss2 { display: none; position: absolute; top: 2px; left: 430px; width: 200px; height: 200px; }
+section.home .bg .bg2 .bg2_up .game .boss2.on {
+	animation: fly3 3s;
+	-webkit-animation: fly3 3s;
+}
+@keyframes fly3
+{
+	0%   {left:-200px;}
+	100% {left:430px;}
+}
+@-webkit-keyframes fly3
+{
+	0%   {left:-200px;}
+	100% {left:430px;}
+}
+
+section.home .bg .bg2 .bg2_up .game .man2 { display: none; position: absolute; top: 250px; left: 100px; width: 80px; height: 80px; background: url(../images/1.jpg) top -146px left -149px no-repeat; }
+section.home .bg .bg2 .bg2_up .game .man2.on {
+	animation: fly4 3s;
+	-webkit-animation: fly4 3s;
+}
+@keyframes fly4
+{
+	0%   {left:640px;}
+	100% {left:100px;}
+}
+@-webkit-keyframes fly4
+{
+	0%   {left:640px;}
+	100% {left:100px;}
+}
+
+section.home .bg .bg2 .bg2_up .chose { display: none; position: absolute; top: 50px; left: 100px; width: 450px; height: 250px; background: #000; overflow: auto; color: #fff; }
+section.home .bg .bg2 .bg2_up .chose .chose1 { position: absolute; top: 0; width: 450px; height: 125px; border-bottom: 1px solid #fff; }
+section.home .bg .bg2 .bg2_up .chose .chose2 { position: absolute; top: 125px; width: 450px; height: 125px; border-bottom: 1px solid #fff; }
+section.home .bg .bg2 .bg2_up .chose .chose3 { position: absolute; top: 250px; width: 450px; height: 125px; }
+
+section.home .bg .bg2 .bg2_up .yesno { display: none; position: absolute; top: 50px; left: 550px; width: 100px; height: 250px; background: #000; color: #fff; border-left: 1px solid #fff; text-align: center; }
+section.home .bg .bg2 .bg2_up .yesno .yes { position: absolute; top: 0; width: 100px; height: 125px; line-height: 120px; font-size: 25px; border-bottom: 1px solid #fff; }
+section.home .bg .bg2 .bg2_up .yesno .no { position: absolute; top: 125px; width: 100px; height: 125px; line-height: 120px; font-size: 25px; }
+
+section.home .bg .bg2 .bg2_dowm { position: absolute; top: 330px; width: 640px; height: 168px; }
+section.home .bg .bg2 .bg2_dowm .bg2_dowm_jn { display: none; position: absolute; top: 0; width: 100%; height: 100%; }
+section.home .bg .bg2 .bg2_dowm .bg2_dowm_jn .bg2_dowm_jn_left { position: absolute; top: 0; left: 0; height: 100%; width: 400px; display: inline-block; display: none; }
+section.home .bg .bg2 .bg2_dowm .bg2_dowm_jn .bg2_dowm_jn_left div { width: 151px; height: 84px; /*border: 1px solid #000*/; display: inline-block; line-height: 90px; text-align: center; }
+section.home .bg .bg2 .bg2_dowm .bg2_dowm_jn .bg2_dowm_jn_right { position: absolute; top: 0; right: 0; height: 100%; width: 230px; border-left: 1px solid #000;  display: inline-block; }
+section.home .bg .bg2 .bg2_dowm .bg2_dowm_jn .bg2_dowm_jn_right .bg2_dowm_jn_right_1 { }
+section.home .bg .bg2 .bg2_dowm .bg2_dowm_jn .bg2_dowm_jn_right div { width: 111px; height: 84px; /*border: 1px solid #000*/; display: inline-block; line-height: 90px; text-align: center; }
+
+section.home .bg .bg2 .bg2_dowm .bg2_dowm_jl { display: none; position: absolute; top: 0; width: 100%; height: 100%; padding-left: 10px; padding-top: 10px; font-size: 30px; background: #f1eff0; }
+
+section.home .bg .bg2 .bg2_up .game .pokemon { display: none; position: absolute; top: 250px; left: 100px; width: 50px; height: 50px; background: url(../images/loading.gif) no-repeat; }
+
+
+
+
+
+
+
+section.home .bg .man.item1_1 { background: url(../images/1.jpg) top -2px left -4px no-repeat; }
+section.home .bg .man.item1_2 { background: url(../images/1.jpg) top -2px left -53px no-repeat; }
+section.home .bg .man.item1_3 { background: url(../images/1.jpg) top -2px left -101px no-repeat; }
+section.home .bg .man.item1_4 { background: url(../images/1.jpg) top -2px left -149px no-repeat; }
+
+section.home .bg .man.item2_1 { background: url(../images/1.jpg) top -50px left -4px no-repeat; }
+section.home .bg .man.item2_2 { background: url(../images/1.jpg) top -50px left -53px no-repeat; }
+section.home .bg .man.item2_3 { background: url(../images/1.jpg) top -50px left -101px no-repeat; }
+section.home .bg .man.item2_4 { background: url(../images/1.jpg) top -50px left -149px no-repeat; }
+
+section.home .bg .man.item3_1 { background: url(../images/1.jpg) top -98px left -4px no-repeat; }
+section.home .bg .man.item3_2 { background: url(../images/1.jpg) top -98px left -53px no-repeat; }
+section.home .bg .man.item3_3 { background: url(../images/1.jpg) top -98px left -101px no-repeat; }
+section.home .bg .man.item3_4 { background: url(../images/1.jpg) top -98px left -149px no-repeat; }
+
+section.home .bg .man.item4_1 { background: url(../images/1.jpg) top -146px left -4px no-repeat; }
+section.home .bg .man.item4_2 { background: url(../images/1.jpg) top -146px left -53px no-repeat; }
+section.home .bg .man.item4_3 { background: url(../images/1.jpg) top -146px left -101px no-repeat; }
+section.home .bg .man.item4_4 { background: url(../images/1.jpg) top -146px left -149px no-repeat; }
+
+section.home .an { position: absolute; top: 498px; width: 640px; height: 498px; background: #000; }
+section.home .an .fx { position: absolute; top: 0; left: 0; width: 320px; height: 200px; }
+section.home .an .fx div { position: absolute; width: 80px; height: 80px; background: #fff; text-align: center; line-height: 66px; font-size: 44px; }
+section.home .an .fx .ss { display: none; z-index: 1; }
+section.home .an .fx .up { position: absolute; top: 10px; left: 100px; }
+section.home .an .fx .left { position: absolute; top: 90px; left: 20px; }
+section.home .an .fx .down { position: absolute; top: 90px; left: 100px; }
+section.home .an .fx .right { position: absolute; top: 90px; left: 180px; }
+
+section.home .an .ab { position: absolute; top: 0; right: 0; width: 320px; height: 200px; }
+section.home .an .ab div { position: absolute; top: 50px; width: 80px; height: 80px; background: #fff; }
+section.home .an .ab .bb { left: 60px; }
+section.home .an .ab .aa { left: 160px; }

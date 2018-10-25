@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection"content="telephone=no, email=no" />
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="MobileOptimized" content="640">
+	<meta name="screen-orientation" content="portrait">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="full-screen" content="yes">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="browsermode" content="application">
+	<meta name="x5-page-mode" content="app">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="width=640,target-densitydpi=device-dpi,maximum-scale=1.0, user-scalable=no">
+	<script>
+    	 function setWidth(a){if(/Andriod/i.test(navigator.userAgent)){var c,b=window.innerWidth;(b!=a)&&(c=b/a),document.addEventListener("DOMContentLoaded",function(){var d = document.getElementsByTagName("body")[0];d.style.webkitTransformOrigin = "left top";d.style.webkitTransform="scale("+c+")"},!1)}}setWidth(640);
+   	</script>
+	<title>Title</title>
+	<link rel="stylesheet" href="css/style.css">
+   	<script src="js/jquery.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<section class="home">
+			<div class="bg">
+				<div class="bg1">
+					<img src="images/2.png" alt="" class="boss">
+					<div class="man"></div>
+					<div class="bgs">
+						<div class="bgs_1"></div>
+						<div class="bgs_2"></div>
+						<div class="bgs_3"></div>
+						<div class="bgs_4"></div>
+					</div>
+				</div>
+				<div class="bg2">
+					<div class="bg2_up">
+						<div class="game">
+							<img src="images/2.jpg" alt="" class="boss2">
+							<div class="man2"></div>
+							<div class="pokemon"></div>
+						</div>
+						<div class="chose">
+							<div class="chose1">蛇强</div>
+							<div class="chose2">黄炸</div>
+							<div class="chose3">李狒狒</div>
+						</div>
+						<div class="yesno">
+							<div class="yes">是</div>
+							<div class="no">否</div>
+						</div>
+					</div>
+					<div class="bg2_dowm">
+						<div class="bg2_dowm_jn">
+							<div class="bg2_dowm_jn_left">
+								<div>甩尾</div>
+								<div>水溅跃</div>
+								<div>剑舞</div>
+								<div>忍耐</div>
+							</div>
+							<div class="bg2_dowm_jn_right">
+								<div class="bg2_dowm_jn_right_1">战斗</div>
+								<div class="">催债</div>
+								<div class="">屌他</div>
+								<div class="">逃跑</div>
+							</div>
+						</div>
+						<div class="bg2_dowm_jl"></div>
+					</div>
+				</div>
+			</div>
+			<div class="an">
+				<div class="fx">
+					<div class="up ss">↑</div>
+					<div class="left ss">←</div>
+					<div class="down ss">↓</div>
+					<div class="right ss">→</div>
+					<div class="up ss2" onclick="gamestart(4)">↑</div>
+					<div class="left ss2" onclick="gamestart(2)">←</div>
+					<div class="down ss2" onclick="gamestart(1)">↓</div>
+					<div class="right ss2" onclick="gamestart(3)">→</div>
+				</div>
+				<div class="ab">
+					<div class="bb">B</div>
+					<div class="aa">A</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script src="http://www.bluedoor.com.cn/Lys_test/test/js/111.js"></script>
+	<script>
+		var i,ii;
+		var top_iii = 0;
+		var left_iii = 0;
+		var is = 2;
+		var iss = 1;
+		var intervalid;
+		var fx;
+		var yidong = false;
+
+		function go(fx){
+			if(fx == 1){
+				// console.log("down")
+				if(top_iii !== 440){
+					top_iii = top_iii + 10;
+				}
+				$(".man").animate({top:top_iii+"px"},10)
+			}else if(fx == 2){
+				// console.log("left")
+				if(left_iii !== 0){
+					left_iii = left_iii - 10;
+				}
+				$(".man").animate({left:left_iii+"px"},10)
+			}else if(fx == 3){
+				// console.log("right")
+				if(left_iii !== 590){
+					left_iii = left_iii + 10;
+				}
+				$(".man").animate({left:left_iii+"px"},10)
+			}else if(fx == 4){
+				// console.log("up")
+				if(top_iii !== 0){
+					top_iii = top_iii - 10;
+				}
+				$(".man").animate({top:top_iii+"px"},10)
+			}
+			$(".man").removeClass("item1_4 item2_4 item3_4 item4_4");
+			$(".man").removeClass("item"+fx+"_"+iss).addClass("item"+fx+"_"+is);
+			if(is == 4){
+				is = 1;
+				iss = 0;
+				clearInterval(intervalid); 
+				return;
+			}
+			is++;
+			iss++;
+			if(left_iii >= 260){
+				boss1_1();
+			}
+			// console.log(top_iii)
+			// console.log(left_iii)
+		}
+
+		function gamestart(i){
+			if(yidong == false){
+				ii = i;
+				intervalid = setInterval("go(ii)", 50);	
+			}else{
+
+			}
+			
+		}
+
+		function boss1_1(){
+			alert("啊！");
+			$(".bgs").addClass("on");
+			setTimeout(function(){
+				$(".bg2").show();
+				$(".bg1").hide();
+				$(".an").hide();
+				$(".boss2").show().addClass("on");
+				$(".man2").show().addClass("on");
+				setTimeout(function(){
+					$(".bg2_dowm_jl").show().html("?????????? ： ...........");
+				},3000)
+			},1000)
+		}
+
+		function boss1_2(){
+
+		}
+
+		var data = 0;
+		var datas = false;
+		$(".bg2_dowm_jl").on("click",function(){
+			if(datas == true){
+				return;
+			}
+			switch(data){
+				case 0:
+					$(".bg2_dowm_jl").html("野生的借钱魔出现了!");
+					data = 1;
+					break;
+				case 1: 
+					$(".bg2_dowm_jl").html("就决定是你了");
+					datas = true;
+					$(".chose").show();
+					break;
+				case 2: 
+					$(".bg2_dowm_jl").html("一股屎味蔓延");
+					break;
+				case 3:
+					data = 4;
+					console.log(data)
+					$(".bg2_dowm_jl").html("蜥蜴我操你妈比！");
+					break;
+				case 4:
+					$(".bg2_dowm_jl").html("蜥蜴不为所动!");
+					data = 5;
+					break;
+				case 5:
+					$(".bg2_dowm_jl").hide();
+					datas = true;
+					break;
+				case 6:
+					$(".bg2_dowm_jl").html("蜥蜴 : 没事 我下个月再找你");
+					data = 5;
+					break;
+				case 7:
+					$(".bg2_dowm_jl").html("蜥蜴不为所动");
+					data = 8;
+					break;
+				case 8:
+					$(".bg2_dowm_jl").html("召唤师，被气死了。游戏结束")
+					data = 9;
+					break;
+				case 9:
+					window.location.href = "index.html";
+					break;
+			}
+		})
+
+		$(".fx .ss2").on("click",function(){
+			$(".ss").show();
+			setTimeout(function(){
+				$(".ss").hide();
+			},200)
+		})
+
+		var chose;
+		$(".chose div").on("click",function(){
+			chose = $(this).html();
+			$(".bg2_dowm_jl").html("是它吗");
+			$(".yesno").show();
+		})
+		
+		$(".yesno .no").on("click",function(){
+			$(this).parent().hide();
+			$(".bg2_dowm_jl").html();
+		})
+
+		$(".yesno .yes").on("click",function(){
+			$(".bg2_dowm_jl").html("去吧"+chose);
+			setTimeout(function(){
+				$(".chose").hide();
+				$(".yesno").hide();
+				setTimeout(function(){
+					$(".man2").fadeOut(500);
+					setTimeout(function(){
+						$(".pokemon").fadeIn(500);
+						setTimeout(function(){
+							$(".bg2_dowm_jl").hide();
+							$(".bg2_dowm_jn").show();
+						},1500)
+					},500)
+				},1000)
+			},300)
+		})
+
+		var iis;
+		$(".bg2_dowm_jn_right div").on("click",function(){
+			iis = $(this).index()+1;
+			console.log($(this).index())
+			switch(iis){
+				case 1: 
+					$(".bg2_dowm_jn_left").show();
+					break;
+				case 2: 
+					$(".bg2_dowm_jl").show().html("快还钱啊!");
+					datas = false;
+					data = 7;
+					break;
+				case 3: 
+					datas = false;
+					data = 3;
+					$(".bg2_dowm_jl").show().html("开始屌他!");
+					break;
+				case 4: 
+					$(".bg2_dowm_jl").show().html("训练师 : 我现在没钱");
+					datas = false;
+					data = 6;
+					break;
+			}
+		})
+		
+		// 读取
+	//     $.ajax({
+	//       type: "POST",
+	//       url: "http://www.bluedoor.com.cn/Lys_test/test/js/citiesData.js",
+	// 	  datatype:"text",
+	//       success: function (res) {
+	// 		console.log(res);
+	//       }
+	//     });
+
+		// $("#uploadbutton").on("click",function(){
+			for(var iiii = 0; iiii<names.length; iiii++){
+				console.log(names[iiii].name)
+			}
+		// })
+	</script>
+</body>
+</html>
